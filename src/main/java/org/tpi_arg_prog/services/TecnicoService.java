@@ -5,6 +5,7 @@ import org.tpi_arg_prog.entities.repository.TecnicoRepositorio;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class TecnicoService {
 
@@ -14,21 +15,23 @@ public class TecnicoService {
         this.tecnicoRepositorio = tecnicoRepositorio;
     }
 
-    void agregarTecnico(Tecnico tecnico) {};
-
-
-    void actualizarTecnico(Tecnico tecnico) {
-
+    public void agregarTecnico(Tecnico tecnico) {
+        tecnicoRepositorio.agregarTecnico(tecnico);
     };
-    Tecnico traerPorId(Long id) {
-        return new Tecnico();
-    };
-    void eliminarTecnica(Long id) {
 
-    }
-    ;
-    List<Tecnico> traerTodosTecnicos() {
-        return new ArrayList<>();
+
+    public void actualizarTecnico(Tecnico tecnico) {
+            tecnicoRepositorio.actualizarTecnico(tecnico);
+    };
+    public Tecnico traerPorId(Long id) {
+
+        return tecnicoRepositorio.traerPorId(id);
+    };
+    public void eliminarTecnica(Tecnico tecnico) {
+        tecnicoRepositorio.eliminarTecnica(tecnico);
+    };
+    public List<Tecnico> traerTodosTecnicos() {
+        return tecnicoRepositorio.traerTodosTecnicos();
     };
 
 }

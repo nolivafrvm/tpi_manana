@@ -3,6 +3,7 @@ package org.tpi_arg_prog.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -17,6 +18,9 @@ public class Tecnico {
 
     private String nombre;
     private String apellido;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Especialidad> especialidades = new ArrayList<>();
 
 
 
